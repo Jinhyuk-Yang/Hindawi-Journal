@@ -1,0 +1,29 @@
+<i2nsf-security-policy>
+<system-policy>
+ <system-policy-name>flood_attack_mitigation</system-policy-name>
+ <rules>
+  <rule-name>mitigate_http_and_https_flood_attack</rule-name>
+  <condition-clause-container>
+   <packet-security-ipv4-condition>
+    <pkt-sec-ipv4-dest>
+     <ipv4-address>
+      <ipv4>221.159.112.95</ipv4>
+     </ipv4-address>
+    </pkt-sec-ipv4-dest>
+   </packet-security-ipv4-condition>
+   <packet-security-tcp-condition>
+    <pkt-sec-tcp-dest-port-num>
+     <port-num>80</port-num>      
+     <port-num>443</port-num>      
+    </pkt-sec-tcp-dest-port-num>
+   </packet-security-tcp-condition>
+  </condition-clause-container>
+  <action-clause-container>
+   <advanced-action>
+    <attack-mitigation-control>http-and-https-flood
+    </attack-mitigation-control>
+   </advanced-action>
+  </action-clause-container>
+ </rules>
+</system-policy>
+</i2nsf-security-policy>

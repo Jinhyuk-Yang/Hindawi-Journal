@@ -1,0 +1,19 @@
+<i2nsf-security-policy>
+<system-policy>
+ <system-policy-name>http_and_https_flood_attack_mitigation
+ </system-policy-name>
+ <rules>
+  <rule-name>100_per_second</rule-name>
+  <condition-clause-container>
+   <packet-security-ddos-condition>
+    <pkt-sec-alert-rate>100</pkt-sec-alert-rate>
+   </packet-security-ddos-condition>
+  </condition-clause-container>
+  <action-clause-container>
+   <packet-action>
+    <ingress-action>drop</ingress-action>
+   </packet-action>
+  </action-clause-container>
+ </rules>
+</system-policy>
+</i2nsf-security-policy>

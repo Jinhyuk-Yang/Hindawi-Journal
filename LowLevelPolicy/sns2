@@ -1,0 +1,19 @@
+<i2nsf-security-policy>
+<system-policy>
+ <system-policy-name>sns_access</system-policy-name>
+ <rules>
+  <rule-name>block_facebook_and_instgram</rule-name>
+  <condition-clause-container>
+   <packet-security-http-condition>
+    <pkt-sec-url-content>facebook</pkt-sec-url-content>
+    <pkt-sec-url-content>instagram</pkt-sec-url-content>
+   </packet-security-http-condition>
+  </condition-clause-container>
+  <action-clause-container>
+   <packet-action>
+    <egress-action>drop</egress-action>
+   </packet-action>
+  </action-clause-container>
+ </rules>
+</system-policy>
+</i2nsf-security-policy>

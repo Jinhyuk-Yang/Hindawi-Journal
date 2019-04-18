@@ -1,0 +1,29 @@
+<i2nsf-security-policy>
+<system-policy>
+ <system-policy-name>voip_volte_inspection</system-policy-name>
+ <rules>
+  <rule-name>block_malicious_voip_volte_packets</rule-name>
+  <condition-clause-container>
+   <packet-security-ipv4-condition>
+    <pkt-sec-ipv4-dest>
+     <range-ipv4-address>
+      <start-ipv4-address>221.159.112.1</start-ipv4-address>
+      <end-ipv4-address>221.159.112.90</end-ipv4-address>
+     </range-ipv4-address>
+    </pkt-sec-ipv4-dest>
+   </packet-security-ipv4-condition>
+   <packet-security-tcp-condition>
+    <pkt-sec-tcp-dest-port-num>
+     <port-num>5060</port-num>    
+     <port-num>5061</port-num>     
+    </pkt-sec-tcp-dest-port-num>
+   </packet-security-tcp-condition>
+  </condition-clause-container>
+  <action-clause-container>
+   <advanced-action>
+    <content-security-control>voip-volte</content-security-control>
+   </advanced-action>
+  </action-clause-container>
+ </rules>
+</system-policy>
+</i2nsf-security-policy>

@@ -1,0 +1,29 @@
+<i2nsf-security-policy>
+<system-policy>
+ <system-policy-name>sns_access</system-policy-name>
+ <rules>
+  <rule-name>block_sns_access_during_operation_time</rule-name>
+  <time-zone>
+   <absolute-time-zone>
+    <start-time>09:00:00Z</start-time>
+    <end-time>18:00:00Z</end-time>
+   </absolute-time-zone>
+  </time-zone>
+  <condition-clause-container>
+   <packet-security-ipv4-condition>
+    <pkt-sec-ipv4-src>
+     <range-ipv4-address>
+      <start-ipv4-address>221.159.112.1</start-ipv4-address>
+      <end-ipv4-address>221.159.112.90</end-ipv4-address>
+     </range-ipv4-address>
+    </pkt-sec-ipv4-src>
+   </packet-security-ipv4-condition>
+  </condition-clause-container>
+  <action-clause-container>
+   <advanced-action>
+    <content-security-control>url-filtering</content-security-control>
+   </advanced-action>
+  </action-clause-container>
+ </rules>
+</system-policy>
+</i2nsf-security-policy>
